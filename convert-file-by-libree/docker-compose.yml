@@ -1,0 +1,12 @@
+services:
+  convert-file-by-libree:
+    image: "convert-file-by-libree:${TAG-latest}"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app:cached
+    environment:
+      ENV: prod
+    tty: true
+    # restart: unless-stopped
